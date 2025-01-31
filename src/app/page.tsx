@@ -8,6 +8,12 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { Download } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -31,10 +37,24 @@ export default function Page() {
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
+              <div className="relative">
+                <Avatar className="size-28 border">
+                  <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                  <AvatarFallback>{DATA.initials}</AvatarFallback>
+                </Avatar>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a href="/cv/Avishka_Prabath_CV.pdf" target="_blank">
+                      <p className="absolute bottom-1 right-1 p-1 rounded-md border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80">
+                        <Download />
+                      </p>
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Download my CV</p>
+                  </TooltipContent>
+                </Tooltip>
+              </div>
             </BlurFade>
           </div>
         </div>
