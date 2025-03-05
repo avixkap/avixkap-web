@@ -45,21 +45,18 @@ export const DATA = {
         name: "GitHub",
         url: "https://github.com/avixkap",
         icon: Icons.github,
-
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/avixkap",
         icon: Icons.linkedin,
-
         navbar: true,
       },
       email: {
         name: "Send Email",
         url: "mailto:avixkap@gmail.com",
         icon: Icons.email,
-
         navbar: true,
       },
     },
